@@ -1,0 +1,657 @@
+{
+ "host": "claude-code",
+ "version": "2.1.332",
+ "fetched": "2026-11-26",
+ "source": "https://code.claude.com/docs/en/commands.md",
+ "entries": [
+  {
+   "name": "add-dir",
+   "kind": "builtin"
+  },
+  {
+   "name": "advisor",
+   "kind": "builtin"
+  },
+  {
+   "name": "agents",
+   "kind": "builtin"
+  },
+  {
+   "name": "artifact-capabilities",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "artifact-diagramming",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "artifacts",
+   "kind": "builtin"
+  },
+  {
+   "name": "auto-mode-setup",
+   "kind": "builtin"
+  },
+  {
+   "name": "autocompact",
+   "kind": "builtin"
+  },
+  {
+   "name": "autofix-pr",
+   "kind": "builtin"
+  },
+  {
+   "name": "background",
+   "kind": "builtin"
+  },
+  {
+   "name": "bg",
+   "kind": "alias",
+   "aliasOf": "background"
+  },
+  {
+   "name": "batch",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "branch",
+   "kind": "builtin"
+  },
+  {
+   "name": "btw",
+   "kind": "builtin"
+  },
+  {
+   "name": "bug",
+   "kind": "builtin"
+  },
+  {
+   "name": "share",
+   "kind": "alias",
+   "aliasOf": "bug"
+  },
+  {
+   "name": "cd",
+   "kind": "builtin"
+  },
+  {
+   "name": "chrome",
+   "kind": "builtin"
+  },
+  {
+   "name": "claude-api",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "claude-approvals",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "claude-in-chrome",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "clear",
+   "kind": "builtin"
+  },
+  {
+   "name": "reset",
+   "kind": "alias",
+   "aliasOf": "clear"
+  },
+  {
+   "name": "new",
+   "kind": "alias",
+   "aliasOf": "clear"
+  },
+  {
+   "name": "code-review",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "review",
+   "kind": "alias",
+   "aliasOf": "code-review"
+  },
+  {
+   "name": "color",
+   "kind": "builtin"
+  },
+  {
+   "name": "compact",
+   "kind": "builtin"
+  },
+  {
+   "name": "config",
+   "kind": "builtin"
+  },
+  {
+   "name": "settings",
+   "kind": "alias",
+   "aliasOf": "config"
+  },
+  {
+   "name": "context",
+   "kind": "builtin"
+  },
+  {
+   "name": "copy",
+   "kind": "builtin"
+  },
+  {
+   "name": "cost",
+   "kind": "alias",
+   "aliasOf": "usage"
+  },
+  {
+   "name": "dataviz",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "debug",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "deep-research",
+   "kind": "bundled-workflow"
+  },
+  {
+   "name": "design",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "design-login",
+   "kind": "builtin"
+  },
+  {
+   "name": "design-sync",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "desktop",
+   "kind": "builtin"
+  },
+  {
+   "name": "app",
+   "kind": "alias",
+   "aliasOf": "desktop"
+  },
+  {
+   "name": "diff",
+   "kind": "builtin"
+  },
+  {
+   "name": "doctor",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "checkup",
+   "kind": "alias",
+   "aliasOf": "doctor"
+  },
+  {
+   "name": "effort",
+   "kind": "builtin"
+  },
+  {
+   "name": "exit",
+   "kind": "builtin"
+  },
+  {
+   "name": "quit",
+   "kind": "alias",
+   "aliasOf": "exit"
+  },
+  {
+   "name": "export",
+   "kind": "builtin"
+  },
+  {
+   "name": "fast",
+   "kind": "builtin"
+  },
+  {
+   "name": "feedback",
+   "kind": "builtin"
+  },
+  {
+   "name": "fewer-permission-prompts",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "focus",
+   "kind": "builtin"
+  },
+  {
+   "name": "fork",
+   "kind": "builtin"
+  },
+  {
+   "name": "goal",
+   "kind": "builtin"
+  },
+  {
+   "name": "heapdump",
+   "kind": "builtin"
+  },
+  {
+   "name": "help",
+   "kind": "builtin"
+  },
+  {
+   "name": "hooks",
+   "kind": "builtin"
+  },
+  {
+   "name": "ide",
+   "kind": "builtin"
+  },
+  {
+   "name": "import",
+   "kind": "builtin"
+  },
+  {
+   "name": "init",
+   "kind": "builtin"
+  },
+  {
+   "name": "insights",
+   "kind": "builtin"
+  },
+  {
+   "name": "install-github-app",
+   "kind": "builtin"
+  },
+  {
+   "name": "install-slack-app",
+   "kind": "builtin"
+  },
+  {
+   "name": "keybindings",
+   "kind": "builtin"
+  },
+  {
+   "name": "list-agents",
+   "kind": "builtin"
+  },
+  {
+   "name": "peers",
+   "kind": "alias",
+   "aliasOf": "list-agents"
+  },
+  {
+   "name": "login",
+   "kind": "builtin"
+  },
+  {
+   "name": "logout",
+   "kind": "builtin"
+  },
+  {
+   "name": "loop",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "proactive",
+   "kind": "alias",
+   "aliasOf": "loop"
+  },
+  {
+   "name": "mcp",
+   "kind": "builtin"
+  },
+  {
+   "name": "memory",
+   "kind": "builtin"
+  },
+  {
+   "name": "mobile",
+   "kind": "builtin"
+  },
+  {
+   "name": "ios",
+   "kind": "alias",
+   "aliasOf": "mobile"
+  },
+  {
+   "name": "android",
+   "kind": "alias",
+   "aliasOf": "mobile"
+  },
+  {
+   "name": "model",
+   "kind": "builtin"
+  },
+  {
+   "name": "motion",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "output-style",
+   "kind": "builtin"
+  },
+  {
+   "name": "passes",
+   "kind": "builtin"
+  },
+  {
+   "name": "permissions",
+   "kind": "builtin"
+  },
+  {
+   "name": "allowed-tools",
+   "kind": "alias",
+   "aliasOf": "permissions"
+  },
+  {
+   "name": "plan",
+   "kind": "builtin"
+  },
+  {
+   "name": "plugin",
+   "kind": "builtin"
+  },
+  {
+   "name": "plugin-authoring",
+   "kind": "builtin"
+  },
+  {
+   "name": "powerup",
+   "kind": "builtin"
+  },
+  {
+   "name": "pr-comments",
+   "kind": "builtin",
+   "removed": true
+  },
+  {
+   "name": "privacy-settings",
+   "kind": "builtin"
+  },
+  {
+   "name": "radio",
+   "kind": "builtin"
+  },
+  {
+   "name": "rate-limit-options",
+   "kind": "builtin"
+  },
+  {
+   "name": "recap",
+   "kind": "builtin"
+  },
+  {
+   "name": "release-notes",
+   "kind": "builtin"
+  },
+  {
+   "name": "reload-plugins",
+   "kind": "builtin"
+  },
+  {
+   "name": "reload-skills",
+   "kind": "builtin"
+  },
+  {
+   "name": "remote-control",
+   "kind": "builtin"
+  },
+  {
+   "name": "rc",
+   "kind": "alias",
+   "aliasOf": "remote-control"
+  },
+  {
+   "name": "remote-env",
+   "kind": "builtin"
+  },
+  {
+   "name": "rename",
+   "kind": "builtin"
+  },
+  {
+   "name": "restart",
+   "kind": "builtin"
+  },
+  {
+   "name": "update",
+   "kind": "alias",
+   "aliasOf": "restart"
+  },
+  {
+   "name": "resume",
+   "kind": "builtin"
+  },
+  {
+   "name": "continue",
+   "kind": "alias",
+   "aliasOf": "resume"
+  },
+  {
+   "name": "rewind",
+   "kind": "builtin"
+  },
+  {
+   "name": "checkpoint",
+   "kind": "alias",
+   "aliasOf": "rewind"
+  },
+  {
+   "name": "undo",
+   "kind": "alias",
+   "aliasOf": "rewind"
+  },
+  {
+   "name": "run",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "run-skill-generator",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "sandbox",
+   "kind": "builtin"
+  },
+  {
+   "name": "schedule",
+   "kind": "builtin"
+  },
+  {
+   "name": "routines",
+   "kind": "alias",
+   "aliasOf": "schedule"
+  },
+  {
+   "name": "scroll-speed",
+   "kind": "builtin"
+  },
+  {
+   "name": "security-review",
+   "kind": "builtin"
+  },
+  {
+   "name": "setup-bedrock",
+   "kind": "builtin"
+  },
+  {
+   "name": "setup-vertex",
+   "kind": "builtin"
+  },
+  {
+   "name": "ship",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "ship:review",
+   "kind": "alias",
+   "aliasOf": "code-review"
+  },
+  {
+   "name": "simplify",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "skill-doctor",
+   "kind": "builtin"
+  },
+  {
+   "name": "skills",
+   "kind": "builtin"
+  },
+  {
+   "name": "slides",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "stats",
+   "kind": "alias",
+   "aliasOf": "usage"
+  },
+  {
+   "name": "status",
+   "kind": "builtin"
+  },
+  {
+   "name": "statusline",
+   "kind": "builtin"
+  },
+  {
+   "name": "steward",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "stickers",
+   "kind": "builtin"
+  },
+  {
+   "name": "stop",
+   "kind": "builtin"
+  },
+  {
+   "name": "subtask",
+   "kind": "builtin"
+  },
+  {
+   "name": "tasks",
+   "kind": "builtin"
+  },
+  {
+   "name": "bashes",
+   "kind": "alias",
+   "aliasOf": "tasks"
+  },
+  {
+   "name": "team-onboarding",
+   "kind": "builtin"
+  },
+  {
+   "name": "teleport",
+   "kind": "builtin"
+  },
+  {
+   "name": "tp",
+   "kind": "alias",
+   "aliasOf": "teleport"
+  },
+  {
+   "name": "terminal-setup",
+   "kind": "builtin"
+  },
+  {
+   "name": "theme",
+   "kind": "builtin"
+  },
+  {
+   "name": "tui",
+   "kind": "builtin"
+  },
+  {
+   "name": "ultraplan",
+   "kind": "builtin",
+   "removed": true
+  },
+  {
+   "name": "ultrareview",
+   "kind": "builtin"
+  },
+  {
+   "name": "update-config",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "upgrade",
+   "kind": "builtin"
+  },
+  {
+   "name": "usage",
+   "kind": "builtin"
+  },
+  {
+   "name": "usage-credits",
+   "kind": "builtin"
+  },
+  {
+   "name": "verify",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "vim",
+   "kind": "builtin",
+   "removed": true
+  },
+  {
+   "name": "voice",
+   "kind": "builtin"
+  },
+  {
+   "name": "web-setup",
+   "kind": "builtin"
+  },
+  {
+   "name": "whiteboard",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "workflow-authoring",
+   "kind": "bundled-skill"
+  },
+  {
+   "name": "workflows",
+   "kind": "builtin"
+  }
+ ],
+ "reserved": [
+  {
+   "name": "ship",
+   "effect": "bundled-wins",
+   "note": "https://code.claude.com/docs/en/skills.md (resolve skills that share a name); https://code.claude.com/docs/en/ship-command-troubleshooting.md"
+  },
+  {
+   "name": "ship-local",
+   "effect": "bundled-wins",
+   "note": "same page as ship"
+  },
+  {
+   "name": "steward",
+   "effect": "bundled-wins",
+   "note": "same page as ship"
+  },
+  {
+   "name": "synced",
+   "effect": "folder-skipped",
+   "note": "https://code.claude.com/docs/en/skills.md (reserved for claude.ai synced skills)"
+  },
+  {
+   "name": "anthropic-skills",
+   "effect": "namespace",
+   "match": "prefix",
+   "note": "https://code.claude.com/docs/en/skills.md (reserved namespace)"
+  },
+  {
+   "name": "computer-use",
+   "effect": "conditional",
+   "note": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md (2.1.332: reserved when computer use is on, macOS)"
+  }
+ ]
+}
