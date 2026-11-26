@@ -1,6 +1,6 @@
 {
   "name": "skillshadow",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Find out which of your Claude Code skills and slash commands are shadowed by built-ins, aliases, reserved names or higher scopes.",
   "license": "MIT",
   "type": "module",
