@@ -168,3 +168,29 @@ test("cli: unknown option and missing value are translated", () => {
   assert.match(b.err, /option --project needs a value/);
   assert.match(cli(["check", "--bogus"]).err, /unknown option --bogus/);
 });
+
+test("cli: a value on a boolean option says it takes no value", () => {
+  const a = cli(["check", "--json=yes"]);
+  assert.equal(a.code, 2);
+  assert.match(a.err, /option --json does not take a value/);
+  assert.doesNotMatch(a.err, /needs a value/);
+  const b = cli(["check", "--demo=1", "--lang", "ko"]);
+  assert.equal(b.code, 2);
+  assert.match(b.err, /--demo 옵션은 값을 받지 않습니다/);
+});
+
+test("cli: folder warning names the folder case only for EISDIR", () => {
+  const home = tmp();
+  mkdirSync(join(home, "_claude/skills/x/SKILL.md"), { recursive: true });
+  const r = cli(["check", "--home", home, "--config-dir-name", "_claude", "--managed-dir", "", "--project", tmp(), "--fail-on", "none"]);
+  assert.match(r.err, /EISDIR\. It is a folder, not a file/);
+  assert.doesNotMatch(r.err, /Check its permissions/);
+});
+
+test("cli: one item uses the singular summary", () => {
+  const home = tmp();
+  write(home, "_claude/skills/only-one/SKILL.md", skillMd());
+  const r = cli(["check", "--home", home, "--config-dir-name", "_claude", "--managed-dir", "", "--project", tmp(), "--fail-on", "none", "--lang", "en"]);
+  assert.match(r.out, /^1 item: 1 ok$/m);
+  assert.doesNotMatch(r.out, /1 items/);
+});
