@@ -11,6 +11,7 @@ export const ko: Record<MessageKey, string> = {
   "col.type": "종류",
   "col.detail": "설명",
   "summary.line": "항목 {total}개: {counts}",
+  "summary.line.one": "항목 {total}개: {counts}",
   "summary.failing": "--fail-on ({failOn}) 에 걸린 항목 {failing}개; 종료 코드 1.",
   "summary.clean": "--fail-on ({failOn}) 에 걸린 항목이 없습니다.",
   "summary.empty": "스킬·명령을 찾지 못했습니다. --home, --project, --config-dir-name 을 확인하세요.",
@@ -93,7 +94,9 @@ export const ko: Record<MessageKey, string> = {
   "err.path-missing": "{option} 폴더를 찾을 수 없습니다: {path}. 존재하는 폴더를 지정하세요.",
   "err.unknown-option": "알 수 없는 옵션입니다: {option}. --help 로 옵션을 확인하세요.",
   "err.option-value": "{option} 옵션에는 값이 필요합니다. --help 로 옵션을 확인하세요.",
-  "err.scan-read": "{file} 을(를) 읽을 수 없습니다: {code}. 권한을 확인하거나 지우세요 (SKILL.md 라는 폴더는 건너뜁니다).",
+  "err.option-no-value": "{option} 옵션은 값을 받지 않습니다. --help 로 옵션을 확인하세요.",
+  "err.scan-read": "{file} 을(를) 읽을 수 없습니다: {code}. 권한을 확인하거나 지우세요. 이 파일은 건너뜁니다.",
+  "err.scan-read-dir": "{file} 을(를) 읽을 수 없습니다: {code}. 파일이 아니라 폴더라서 건너뜁니다.",
   "err.snapshot": "스냅숏 형식이 잘못되었습니다 (invalid snapshot) {file}: {detail}",
 
   // ---- 도움말 ----

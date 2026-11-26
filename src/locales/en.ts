@@ -9,6 +9,7 @@ export const en = {
   "col.type": "TYPE",
   "col.detail": "DETAIL",
   "summary.line": "{total} items: {counts}",
+  "summary.line.one": "{total} item: {counts}",
   "summary.failing": "{failing} item(s) match --fail-on ({failOn}); exit code 1.",
   "summary.clean": "Nothing matches --fail-on ({failOn}).",
   "summary.empty": "No skills or commands found. Check --home, --project or --config-dir-name.",
@@ -91,7 +92,9 @@ export const en = {
   "err.path-missing": "{option} folder not found: {path}. Pass an existing folder.",
   "err.unknown-option": "unknown option {option}. Run with --help to see the options.",
   "err.option-value": "option {option} needs a value. Run with --help to see the options.",
-  "err.scan-read": "cannot read {file}: {code}. Check its permissions or remove it (a folder named SKILL.md is skipped).",
+  "err.option-no-value": "option {option} does not take a value. Run with --help to see the options.",
+  "err.scan-read": "cannot read {file}: {code}. Check its permissions or remove it; it is skipped.",
+  "err.scan-read-dir": "cannot read {file}: {code}. It is a folder, not a file, so it is skipped.",
   "err.snapshot": "invalid snapshot {file}: {detail}",
 
   // ---- help ----

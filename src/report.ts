@@ -108,7 +108,9 @@ export function formatTable(verdicts: Verdict[], ctx: ReportContext): string {
   const parts = ALL_STATUSES.filter((s) => counts[s] > 0).map((s) => `${counts[s]} ${s}`);
   const failing = verdicts.filter((v) => isFailing(v, ctx.failOn)).length;
   const failOn = ctx.failOn.length ? ctx.failOn.join(",") : t("failon.none");
-  lines.push("", t("summary.line", { total: String(verdicts.length), counts: parts.join(", ") }));
+  // 1건이면 단수 문구("1 item")를 쓴다.
+  const summaryKey = verdicts.length === 1 ? "summary.line.one" : "summary.line";
+  lines.push("", t(summaryKey, { total: String(verdicts.length), counts: parts.join(", ") }));
   lines.push(failing > 0 ? t("summary.failing", { failing: String(failing), failOn }) : t("summary.clean", { failOn }));
   return lines.join("\n") + "\n";
 }

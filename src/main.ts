@@ -82,7 +82,12 @@ export function run(argv: string[], io: RunIo): number {
     const e = err as Error & { code?: string };
     const opt = /'(-{1,2}[^'\s]+)/.exec(e.message)?.[1] ?? "";
     if (e.code === "ERR_PARSE_ARGS_UNKNOWN_OPTION" && opt) return fail("err.unknown-option", { option: opt });
-    if (e.code === "ERR_PARSE_ARGS_INVALID_OPTION_VALUE" && opt) return fail("err.option-value", { option: opt });
+    if (e.code === "ERR_PARSE_ARGS_INVALID_OPTION_VALUE" && opt) {
+      // 같은 오류 코드가 두 경우에 쓰인다: 문자열 옵션에 값이 없음 / 불리언 옵션에 값이 붙음(--json=yes).
+      const spec = OPTIONS[opt.replace(/^-+/, "") as keyof typeof OPTIONS] as { type: string } | undefined;
+      const key: MessageKey = spec?.type === "boolean" ? "err.option-no-value" : "err.option-value";
+      return fail(key, { option: opt });
+    }
     return fail("err.usage", { detail: e.message.replace(/\.$/, "") });
   }
   const { values, positionals } = parsed;
@@ -149,7 +154,9 @@ export function run(argv: string[], io: RunIo): number {
 
   // Unreadable SKILL.md files are skipped with a warning on stderr; the scan keeps going.
   setScanWarn((file, code) => {
-    io.stderr(`${t("warn.prefix")}: ${t("err.scan-read", { file, code })}\n`);
+    // 폴더 이름이 SKILL.md 인 경우(EISDIR)와 권한 등 다른 읽기 오류는 안내 문구가 다르다.
+    const key: MessageKey = code === "EISDIR" ? "err.scan-read-dir" : "err.scan-read";
+    io.stderr(`${t("warn.prefix")}: ${t(key, { file, code })}\n`);
   });
   let items;
   try {
