@@ -26,7 +26,7 @@ node dist/cli.js --version
 ```
 
 ```text
-skillshadow 0.1.1
+skillshadow 0.1.2
 ```
 
 Once the package is on the npm registry you can also run it without cloning: `npx skillshadow check`. The commands below use `skillshadow` for `node dist/cli.js`; inside the clone, type the longer form.
@@ -74,7 +74,7 @@ node dist/cli.js check
 | `ok` | No conflict. |
 | `overrides` | Your item has the same name as a built-in or bundled skill and replaces it in local terminal sessions. Its aliases still run the built-in. |
 | `shadowed` | Another item with the same name wins (higher scope, or a skill over a command file). |
-| `not-loaded` | The name is reserved (for example the bundled `/ship`), so your item is never loaded. |
+| `not-loaded` | The name is reserved. Where the reservation applies, your item is not loaded (for example, your `/ship` is not loaded where the bundled `/ship` is available). |
 | `unreachable` | The winning item is `user-invocable: false`, so typing the name runs nothing. |
 | `ambiguous` | The docs and user reports disagree, or the docs are silent. skillshadow does not guess. |
 | `namespaced-only` | A plugin item whose bare name is taken; reachable only as `/plugin:name`. |
@@ -191,7 +191,7 @@ flowchart LR
 | Symptom | Cause | Fix |
 |---|---|---|
 | `error: --project folder not found: <path>. Pass an existing folder.` (exit 2) | The folder passed to `--project` does not exist | Pass an existing folder |
-| `No skills or commands found.` | The tool starts in the current folder and reads `.claude` there | Run it from the project, or pass `--project` |
+| `No skills or commands found. Check --home, --project or --config-dir-name.` | The tool starts in the current folder and reads `.claude` there | Run it from the project, or pass `--project` |
 | Output is Korean or English unexpectedly | `LANG` or `SKILLSHADOW_LANG` is set | Pass `--lang en` or `--lang ko` |
 | CI fails but you only want a report | Default `--fail-on` includes `not-loaded,shadowed,unreachable` | Use `--fail-on none` |
 | `explain foo` prints "not found" | No file or built-in with that name (exit code stays 0) | Check the spelling; names are compared in lower case |
@@ -204,7 +204,7 @@ npm ci
 npm test
 ```
 
-`npm test` builds and runs 66 tests with `node:test` (runtime dependencies: none). Report bugs and ideas as issues. Changes are listed in [CHANGELOG.md](CHANGELOG.md).
+`npm test` builds and runs 69 tests with `node:test` (runtime dependencies: none). Report bugs and ideas as issues. Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

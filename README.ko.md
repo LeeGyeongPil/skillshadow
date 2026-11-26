@@ -26,7 +26,7 @@ node dist/cli.js --version
 ```
 
 ```text
-skillshadow 0.1.1
+skillshadow 0.1.2
 ```
 
 패키지가 npm 레지스트리에 올라가면 클론 없이 `npx skillshadow check` 로도 실행할 수 있습니다. 아래 명령은 `node dist/cli.js` 를 쓰며, 클론 폴더 안에서 그대로 입력하면 됩니다.
@@ -74,7 +74,7 @@ node dist/cli.js check
 | `ok` | 충돌 없음. |
 | `overrides` | 내 항목이 내장 명령·번들 스킬과 같은 이름이라 로컬 터미널 세션에서 그것을 대체합니다. 별칭은 여전히 내장으로 갑니다. |
 | `shadowed` | 같은 이름의 다른 항목이 이깁니다(더 높은 범위, 또는 명령 파일보다 스킬). |
-| `not-loaded` | 예약 이름(예: 번들 `/ship`)이라 내 항목은 아예 로드되지 않습니다. |
+| `not-loaded` | 예약된 이름입니다. 그 예약이 적용되는 환경에서는 내 항목이 로드되지 않습니다(예: 번들 `/ship` 을 쓸 수 있는 환경에서는 내 `/ship` 이 로드되지 않음). |
 | `unreachable` | 이기는 항목이 `user-invocable: false` 라서 이름을 입력해도 아무것도 실행되지 않습니다. |
 | `ambiguous` | 문서와 사용자 보고가 어긋나거나 문서가 말이 없습니다. 추측하지 않습니다. |
 | `namespaced-only` | 접두 없는 이름을 다른 것이 쓰는 플러그인 항목. `/플러그인:이름` 으로만 호출됩니다. |
@@ -191,7 +191,7 @@ flowchart LR
 | 증상 | 원인 | 해결 |
 |---|---|---|
 | `오류: --project 폴더를 찾을 수 없습니다: <경로>. 존재하는 폴더를 지정하세요.` (종료 코드 2) | `--project` 로 준 폴더가 없음 | 존재하는 폴더를 지정 |
-| `스킬·명령을 찾지 못했습니다.` | 도구가 현재 폴더에서 시작해 그곳의 `.claude` 를 읽음 | 프로젝트 폴더에서 실행하거나 `--project` 지정 |
+| `스킬·명령을 찾지 못했습니다. --home, --project, --config-dir-name 을 확인하세요.` | 도구가 현재 폴더에서 시작해 그곳의 `.claude` 를 읽음 | 프로젝트 폴더에서 실행하거나 `--project` 지정 |
 | 출력이 뜻밖에 한국어·영어로 나옴 | `LANG` 또는 `SKILLSHADOW_LANG` 이 설정됨 | `--lang en` 또는 `--lang ko` 지정 |
 | 보고서만 보고 싶은데 CI 가 실패함 | 기본 `--fail-on` 에 `not-loaded,shadowed,unreachable` 포함 | `--fail-on none` |
 | `explain foo` 가 "not found" 를 출력 | 그 이름의 파일·내장 명령이 없음(종료 코드는 0) | 철자 확인; 이름은 소문자로 비교 |
@@ -204,7 +204,7 @@ npm ci
 npm test
 ```
 
-`npm test` 는 빌드 후 `node:test` 로 테스트 66개를 실행합니다(런타임 의존성 없음). 버그·제안은 이슈로 남겨 주세요. 변경 기록은 [CHANGELOG.md](CHANGELOG.md).
+`npm test` 는 빌드 후 `node:test` 로 테스트 69개를 실행합니다(런타임 의존성 없음). 버그·제안은 이슈로 남겨 주세요. 변경 기록은 [CHANGELOG.md](CHANGELOG.md).
 
 ## 라이선스
 
