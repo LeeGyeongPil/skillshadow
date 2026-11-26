@@ -26,7 +26,7 @@ node dist/cli.js --version
 ```
 
 ```text
-skillshadow 0.1.0
+skillshadow 0.1.1
 ```
 
 패키지가 npm 레지스트리에 올라가면 클론 없이 `npx skillshadow check` 로도 실행할 수 있습니다. 아래 명령은 `node dist/cli.js` 를 쓰며, 클론 폴더 안에서 그대로 입력하면 됩니다.
@@ -190,7 +190,7 @@ flowchart LR
 
 | 증상 | 원인 | 해결 |
 |---|---|---|
-| `오류: --project 폴더를 찾을 수 없습니다: ...` (종료 코드 2) | `--project` 로 준 폴더가 없음 | 존재하는 폴더를 지정 |
+| `오류: --project 폴더를 찾을 수 없습니다: <경로>. 존재하는 폴더를 지정하세요.` (종료 코드 2) | `--project` 로 준 폴더가 없음 | 존재하는 폴더를 지정 |
 | `스킬·명령을 찾지 못했습니다.` | 도구가 현재 폴더에서 시작해 그곳의 `.claude` 를 읽음 | 프로젝트 폴더에서 실행하거나 `--project` 지정 |
 | 출력이 뜻밖에 한국어·영어로 나옴 | `LANG` 또는 `SKILLSHADOW_LANG` 이 설정됨 | `--lang en` 또는 `--lang ko` 지정 |
 | 보고서만 보고 싶은데 CI 가 실패함 | 기본 `--fail-on` 에 `not-loaded,shadowed,unreachable` 포함 | `--fail-on none` |

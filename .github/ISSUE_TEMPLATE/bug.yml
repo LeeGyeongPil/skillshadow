@@ -17,6 +17,6 @@ body:
     id: env
     attributes:
       label: 환경 / Environment
-      placeholder: "macOS 15 (M3) · Ubuntu 24.04 · Windows 11 / uv 0.x / mock or real mode"
+      placeholder: "macOS 15 · Ubuntu 24.04 · Windows 11 / Node 22 / skillshadow --version"
     validations:
       required: true

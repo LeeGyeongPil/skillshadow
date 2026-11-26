@@ -26,7 +26,7 @@ node dist/cli.js --version
 ```
 
 ```text
-skillshadow 0.1.0
+skillshadow 0.1.1
 ```
 
 Once the package is on the npm registry you can also run it without cloning: `npx skillshadow check`. The commands below use `skillshadow` for `node dist/cli.js`; inside the clone, type the longer form.
@@ -190,7 +190,7 @@ flowchart LR
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `error: --project folder not found: ...` (exit 2) | The folder passed to `--project` does not exist | Pass an existing folder |
+| `error: --project folder not found: <path>. Pass an existing folder.` (exit 2) | The folder passed to `--project` does not exist | Pass an existing folder |
 | `No skills or commands found.` | The tool starts in the current folder and reads `.claude` there | Run it from the project, or pass `--project` |
 | Output is Korean or English unexpectedly | `LANG` or `SKILLSHADOW_LANG` is set | Pass `--lang en` or `--lang ko` |
 | CI fails but you only want a report | Default `--fail-on` includes `not-loaded,shadowed,unreachable` | Use `--fail-on none` |
